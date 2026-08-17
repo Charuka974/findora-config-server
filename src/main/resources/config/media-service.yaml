@@ -1,0 +1,29 @@
+#server:
+#  port: 8083
+#
+#spring:
+#  servlet:
+#    multipart:
+#      max-file-size: 20MB
+#      max-request-size: 25MB
+#
+## findora:
+##   storage:
+##     project-id: your-gcp-project-id
+##     bucket-name: findora-media-bucket
+
+server:
+  port: 8083
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 25MB
+
+findora:
+  storage:
+    type: local # Options: 'local' or 'gcs'
+    local-dir: ./uploads # Directory where files will be saved locally
+    local-url-prefix: http://localhost:8083/uploads/ # Base URL to access local files
+    bucket-name: findora-media-bucket # For GCP GCS deployment

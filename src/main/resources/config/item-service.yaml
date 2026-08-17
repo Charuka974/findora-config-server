@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/findora_items
+
+gcp:
+  project-id: YOUR_ACTUAL_GCP_PROJECT_ID
