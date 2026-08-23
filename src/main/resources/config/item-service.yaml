@@ -2,9 +2,21 @@ server:
   port: 8082
 
 spring:
+  application:
+    name: item-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/findora_items
+      uri: mongodb://localhost:27017/findora_item_db
 
-gcp:
-  project-id: YOUR_ACTUAL_GCP_PROJECT_ID
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
