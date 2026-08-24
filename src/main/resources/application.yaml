@@ -1,6 +1,25 @@
+
+#server:
+#  port: 8888
+#
 #spring:
 #  application:
 #    name: config-server
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/config
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,info
+
+# Remote Config Repo
 
 server:
   port: 8888
@@ -8,13 +27,13 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
+        git:
+          uri: https://github.com/Charuka974/findora-config-repo.git
+          default-label: main
+          clone-on-start: true
 
 management:
   endpoints:
